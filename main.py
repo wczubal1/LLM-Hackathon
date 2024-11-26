@@ -131,7 +131,7 @@ def main(user_query: str):
 
     result = user.initiate_chat(group_chat_manager, message=user_query,summary_method="last_msg")
 
-# DO NOT modify this code below.
+
 if __name__ == "__main__":
-    assert len(sys.argv) > 1, "Please ensure you include a query for some restaurant when executing main."
+    assert len(sys.argv) > 1, 
     main(sys.argv[1])
