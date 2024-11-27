@@ -9,6 +9,7 @@ from autogen.function_utils import get_function_schema
 from typing import Annotated, Dict, List
 import numpy as np
 from pathlib import Path
+import SP500data
 
 config_list=[{"model": "gpt-4o-mini", "api_key": os.environ["OPENAI_API_KEY"]}]
 
