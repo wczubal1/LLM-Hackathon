@@ -9,7 +9,8 @@ from autogen.function_utils import get_function_schema
 from typing import Annotated, Dict, List
 import numpy as np
 from pathlib import Path
-import SP500data
+#import SP500data
+from G_K_vol import garman_klass_volatility
 
 config_list=[{"model": "gpt-4o-mini", "api_key": os.environ["OPENAI_API_KEY"]}]
 
@@ -23,6 +24,7 @@ def find_cluster(stocks: Annotated[list, "List of stocks user is interested in i
     Returns:
         list: list of stocks that are suggested for a client from similar cluster
     """
+    return stocks
 
 def monitor_optimal_risk(cluster: Annotated[list, "Computes risk for the last 30 days for a cluster"]):
     """
@@ -34,6 +36,7 @@ def monitor_optimal_risk(cluster: Annotated[list, "Computes risk for the last 30
     Returns:
         rosk for the investments
     """
+    pass
 
 
 def main(user_query: str):
@@ -59,6 +62,12 @@ def main(user_query: str):
         description="Finds cluster of stocks for a suggested investment",
     )
 
+    risk_calculator_schema = get_function_schema(
+        garman_klass_volatility,
+        name="garman_klass_volatility",
+        description="Computes risk for the last 30 days for a cluster",
+    )
+
     monitor_optimal_risk_schema = get_function_schema(
         monitor_optimal_risk,
         name="monitor_optimal_risk",
@@ -71,19 +80,46 @@ def main(user_query: str):
         instructions="""
         As 'entrypoint_agent', your primary role is to find out stocks that user/investor is interested in and then find similar stocks:
 
-        1. Use the 'find_cluster_schema' function 
+        1. Use the 'find_cluster_schema' function
+        2. An input is a python list of stock tickers
+        3. The second input is int which is a number of stocks in portfolio
         """,
         overwrite_instructions=True,  # overwrite any existing instructions with the ones provided
         overwrite_tools=True,  # overwrite any existing tools with the ones provided
         llm_config={
             "config_list": config_list,
-            "tools": [fetch_restaurant_data_schema],
+            "tools": [find_cluster_schema],
         },
     )
 
     entrypoint_agent.register_function(
         function_map={
             "find_cluster": find_cluster,
+        },
+    )
+
+    risk_calc_agent = GPTAssistantAgent(
+        name="risk_calc_agent",
+        instructions="""
+        As 'risk_calc_agent', You compute risk for the last 30 days for a cluster as follows:
+
+        1. Use the 'garman_klass_volatility' to provide last 30 days risk for investment
+        2. As the first input to the function take 'D:\Witold\Documents\Computing\LLMAgentsOfficial\Hackathon\sp500_stock_data.csv'
+        3. Second argument is python list of tickers from entrypoint_agent
+        4. Third argument is date (str): The base date in 'YYYY-MM-DD' format.
+        5. Once you run the function communicate the risk to risk_agent
+        """,
+        overwrite_instructions=True,  # overwrite any existing instructions with the ones provided
+        overwrite_tools=True,  # overwrite any existing tools with the ones provided
+        llm_config={
+            "config_list": config_list,
+            "tools": [risk_calculator_schema],
+        },
+    )
+
+    risk_calc_agent.register_function(
+        function_map={
+            "garman_klass_volatility": garman_klass_volatility,
         },
     )
 
@@ -109,30 +145,31 @@ def main(user_query: str):
         },
     )
 
-    trade_agent = GPTAssistantAgent(
-        name="trade_agent",
-        instructions="""
-        Adjusts positions based on risk
-        """,
-        overwrite_instructions=True,  # overwrite any existing instructions with the ones provided
-        overwrite_tools=True,  # overwrite any existing tools with the ones provided
-        llm_config={
-            "config_list": config_list,
-        },
-    )
+##    trade_agent = GPTAssistantAgent(
+##        name="trade_agent",
+##        instructions="""
+##        Adjusts positions based on risk
+##        """,
+##        overwrite_instructions=True,  # overwrite any existing instructions with the ones provided
+##        overwrite_tools=True,  # overwrite any existing tools with the ones provided
+##        llm_config={
+##            "config_list": config_list,
+##        },
+##    )
+##
+##    trade_agent.register_function(
+##        function_map={
+##            "": ,
+##        },
+##    )
 
-    trade_agent.register_function(
-        function_map={
-            "": ,
-        },
-    )
-
-    groupchat = autogen.GroupChat(agents=[user, entrypoint_agent, risk_agent, trade_agent], messages=[], max_round=15)
+    groupchat = autogen.GroupChat(agents=[user, entrypoint_agent, risk_calc_agent, trade], messages=[], max_round=15)
     group_chat_manager = autogen.GroupChatManager(groupchat=groupchat, llm_config={"config_list": config_list})
 
     result = user.initiate_chat(group_chat_manager, message=user_query,summary_method="last_msg")
 
 
 if __name__ == "__main__":
-    assert len(sys.argv) > 1, 
-    main(sys.argv[1])
+    #assert len(sys.argv) > 1, 
+    #main(sys.argv[1])
+    main("ticker is AAPL date is 2024-02-01")
