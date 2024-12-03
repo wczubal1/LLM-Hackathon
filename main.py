@@ -82,7 +82,9 @@ def main(user_query: str):
 
         1. Use the 'find_cluster_schema' function
         2. An input is a python list of stock tickers
-        3. The second input is int which is a number of stocks in portfolio
+        3. The second input is size and it is int which is a number of stocks in portfolio.
+        4. If the size is equal to 1 it means that the user is only interested in the particular stock he mentioned. In this case simply send back only this particular stock as python list.
+        5. Communicate to risk_calc_agent file_path, list of tickers, and a date
         """,
         overwrite_instructions=True,  # overwrite any existing instructions with the ones provided
         overwrite_tools=True,  # overwrite any existing tools with the ones provided
@@ -106,8 +108,10 @@ def main(user_query: str):
         1. Use the 'garman_klass_volatility' to provide last 30 days risk for investment
         2. As the first input to the function take 'D:\Witold\Documents\Computing\LLMAgentsOfficial\Hackathon\sp500_stock_data.csv'
         3. Second argument is python list of tickers from entrypoint_agent
-        4. Third argument is date (str): The base date in 'YYYY-MM-DD' format.
-        5. Once you run the function communicate the risk to risk_agent
+        4. Third argument is the staring date (str): The base date in 'YYYY-MM-DD' format.
+        5. You run the function for the next 15 days adding one day to the staring date each time
+        6. After each run of the function communicate the risk to risk_agent
+        7. If there is no results for a given date you omit it and not communicate it
         """,
         overwrite_instructions=True,  # overwrite any existing instructions with the ones provided
         overwrite_tools=True,  # overwrite any existing tools with the ones provided
@@ -135,7 +139,7 @@ def main(user_query: str):
         overwrite_tools=True,  # overwrite any existing tools with the ones provided
         llm_config={
             "config_list": config_list,
-            "tools": [calculate_score_schema],
+            "tools": [monitor_optimal_risk_schema],
         },
     )
 
@@ -163,7 +167,7 @@ def main(user_query: str):
 ##        },
 ##    )
 
-    groupchat = autogen.GroupChat(agents=[user, entrypoint_agent, risk_calc_agent, trade], messages=[], max_round=15)
+    groupchat = autogen.GroupChat(agents=[user, entrypoint_agent, risk_calc_agent], messages=[], max_round=15)
     group_chat_manager = autogen.GroupChatManager(groupchat=groupchat, llm_config={"config_list": config_list})
 
     result = user.initiate_chat(group_chat_manager, message=user_query,summary_method="last_msg")
@@ -172,4 +176,4 @@ def main(user_query: str):
 if __name__ == "__main__":
     #assert len(sys.argv) > 1, 
     #main(sys.argv[1])
-    main("ticker is AAPL date is 2024-02-01")
+    main("file_path is 'D:/Witold/Documents/Computing/LLMAgentsOfficial/Hackathon/sp500_stock_data.csv', ticker is NVDA, size is 1 and the starting date is 2024-03-01")

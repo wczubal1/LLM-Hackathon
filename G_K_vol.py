@@ -1,7 +1,10 @@
 import pandas as pd
 import numpy as np
+from pathlib import Path
+from typing import Annotated
+import os
 
-def garman_klass_volatility(file_path, tickers, date):
+def garman_klass_volatility(file_path: Annotated[str, "File with stock price data"], tickers: Annotated[list, "List of stock tickers"], date: Annotated[str, "The base date in 'YYYY-MM-DD' format"]):
     """
     Compute the Garman-Klass volatility for a list of tickers over the last 30 days from a CSV file.
     
@@ -16,6 +19,8 @@ def garman_klass_volatility(file_path, tickers, date):
     # Load data from CSV file
     df = pd.read_csv(file_path)
 
+    #print(df.head())
+
     # Ensure the Date column is a datetime type
     df['Date'] = pd.to_datetime(df['Date'])
 
@@ -23,6 +28,7 @@ def garman_klass_volatility(file_path, tickers, date):
     results = {}
 
     for ticker in tickers:
+        
         # Check if the ticker exists in the DataFrame
         if ticker not in df['Ticker'].unique():
             results[ticker] = f"Ticker '{ticker}' not found in the data."
@@ -30,17 +36,17 @@ def garman_klass_volatility(file_path, tickers, date):
 
         # Filter the dataframe for the given ticker and sort by date
         ticker_df = df[df['Ticker'] == ticker].sort_values(by='Date')
-
+        
         # Determine the last 30 days from the given date
         end_date = pd.to_datetime(date)
         start_date = end_date - pd.DateOffset(days=30)
 
         # Filter the data for the last 30 days
         last_30_days = ticker_df[(ticker_df['Date'] >= start_date) & (ticker_df['Date'] <= end_date)]
-
+        
         # Check if there is enough data
-        if len(last_30_days) < 30:
-            results[ticker] = "Insufficient data for the last 30 days."
+        if last_30_days.shape[0] < 20:
+            results[ticker] = "Insufficient data for the last 30 days (number of trading days less then 20)."
             continue
 
         # Apply Garman-Klass formula
@@ -53,3 +59,5 @@ def garman_klass_volatility(file_path, tickers, date):
         results[ticker] = garman_klass_vol
 
     return results
+
+#print(garman_klass_volatility('D:/Witold/Documents/Computing/LLMAgentsOfficial/Hackathon/sp500_stock_data.csv',['AAPL'],'2024-03-01'))
