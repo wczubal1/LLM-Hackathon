@@ -11,6 +11,7 @@ import numpy as np
 from pathlib import Path
 #import SP500data
 from G_K_vol import garman_klass_volatility
+from var_cov import calc_cov_matrix, portfolio_volatility, optimize_for_target_risk
 
 config_list=[{"model": "gpt-4o-mini", "api_key": os.environ["OPENAI_API_KEY"]}]
 
@@ -68,10 +69,16 @@ def main(user_query: str):
         description="Computes risk for the last 30 days for a cluster",
     )
 
-    monitor_optimal_risk_schema = get_function_schema(
-        monitor_optimal_risk,
-        name="monitor_optimal_risk",
-        description="Computes risk for the last 30 days for a cluster",
+    portfolio_risk_calculator_schema = get_function_schema(
+        calc_cov_matrix,
+        name="portfolio_volatility",
+        description="Computes risk for the last 30 days for a portfolio cluster",
+    )
+
+    optimize_for_target_risk_schema = get_function_schema(
+        optimize_for_target_risk,
+        name="optimize_for_target_risk",
+        description="Computes optimal weights given target",
     )
 
 
@@ -83,8 +90,9 @@ def main(user_query: str):
         1. Use the 'find_cluster_schema' function
         2. An input is a python list of stock tickers
         3. The second input is size and it is int which is a number of stocks in portfolio.
-        4. If the size is equal to 1 it means that the user is only interested in the particular stock he mentioned. In this case simply send back only this particular stock as python list.
-        5. Communicate to risk_calc_agent file_path, list of tickers, and a date
+        4. If the size is equal to 1 it means that the user is only interested in the particular stocks he mentioned. In this case simply send back only this particular stocks as python list.
+        5. Put the tickers in alphabetical order in a python list and put the weights in the same order in another python list
+        6. Communicate to portfolio_calc_agent file_path, list of tickers, date and weights
         """,
         overwrite_instructions=True,  # overwrite any existing instructions with the ones provided
         overwrite_tools=True,  # overwrite any existing tools with the ones provided
@@ -100,52 +108,88 @@ def main(user_query: str):
         },
     )
 
-    risk_calc_agent = GPTAssistantAgent(
-        name="risk_calc_agent",
-        instructions="""
-        As 'risk_calc_agent', You compute risk for the last 30 days for a cluster as follows:
+##    risk_calc_agent = GPTAssistantAgent(
+##        name="risk_calc_agent",
+##        instructions="""
+##        As 'risk_calc_agent', You compute risk for the last 30 days for a cluster as follows:
+##
+##        1. Use the 'garman_klass_volatility' to provide last 30 days risk for investment
+##        2. As the first input to the function take 'D:\Witold\Documents\Computing\LLMAgentsOfficial\Hackathon\sp500_stock_data.csv'
+##        3. Second argument is python list of tickers from entrypoint_agent
+##        4. Third argument is the staring date (str): The base date in 'YYYY-MM-DD' format.
+##        5. You run the function for the next 15 days adding one day to the staring date each time
+##        6. After each run of the function communicate the risk
+##        7. If there is no results for a given date you omit it and not communicate it
+##        8. Communicate to portfolio_calc_agent file_path, list of tickers, date and weights
+##        """,
+##        overwrite_instructions=True,  # overwrite any existing instructions with the ones provided
+##        overwrite_tools=True,  # overwrite any existing tools with the ones provided
+##        llm_config={
+##            "config_list": config_list,
+##            "tools": [risk_calculator_schema],
+##        },
+##    )
+##
+##    risk_calc_agent.register_function(
+##        function_map={
+##            "garman_klass_volatility": garman_klass_volatility,
+##        },
+##    )
 
-        1. Use the 'garman_klass_volatility' to provide last 30 days risk for investment
-        2. As the first input to the function take 'D:\Witold\Documents\Computing\LLMAgentsOfficial\Hackathon\sp500_stock_data.csv'
+    portfolio_calc_agent = GPTAssistantAgent(
+        name="portfolio_calc_agent",
+        instructions="""
+        As 'portfolio_calc_agent', You compute risk for the last 30 days for a cluster as follows:
+
+        1. The inputs were communicated earlier to you by the entrypoint_agent
+        2. As the first input to the function take file_path
         3. Second argument is python list of tickers from entrypoint_agent
         4. Third argument is the staring date (str): The base date in 'YYYY-MM-DD' format.
-        5. You run the function for the next 15 days adding one day to the staring date each time
-        6. After each run of the function communicate the risk to risk_agent
-        7. If there is no results for a given date you omit it and not communicate it
+        5. Fourth argument are portfolio weights. Remember that portfolio weights must correspond to the order of tickers
+        6. You run the function for the next 15 days adding one day to the staring date each time
+        7. After each run of the function you communicate the portfolio_risk to risk_agent and wait for his reply before proceeding further
+        8. If the risk_agent says OK you move to the new date
+        9. If the risk_agent says New Weights take the New Weights and you move to the new date
+        10. If there is no results for a given date you omit it and not communicate it
+        11. Once you reach 15 days you say Terminate
         """,
         overwrite_instructions=True,  # overwrite any existing instructions with the ones provided
         overwrite_tools=True,  # overwrite any existing tools with the ones provided
         llm_config={
             "config_list": config_list,
-            "tools": [risk_calculator_schema],
+            "tools": [portfolio_risk_calculator_schema],
         },
     )
 
-    risk_calc_agent.register_function(
+    portfolio_calc_agent.register_function(
         function_map={
-            "garman_klass_volatility": garman_klass_volatility,
+            "portfolio_volatility": portfolio_volatility,
         },
     )
 
     risk_agent = GPTAssistantAgent(
         name="risk_agent",
         instructions="""
-        As 'risk_agent', You compute risk for the last 30 days for a cluster as follows:
+        As 'risk_agent', You adjust portfolio weights communicating with portfolio_calc_agent as follows:
 
-        1. Use the 'monitor_optimal_risk' to provide last 30 days risk for investment
-        2. If risk is outside of bands contact 'trade_agent' and tell him adjustements are needed
+        1. portfolio_calc_agent gives you portfolio risk for a given day
+        2. If portfolio risk is less than target risk you say OK to portfolio_calc_agent and he moves to the next day
+        3. If portfolio risk is greater than target risk you call optimize_for_target_risk function
+        4. The function will produce new weights.
+        5. You say "New Weights" to portfolio_calc_agent and communicate updated weigths to portfolio_calc_agent
+        6. In the next step you wait for portfolio risk for a next day from portfolio_calc_agent
         """,
         overwrite_instructions=True,  # overwrite any existing instructions with the ones provided
         overwrite_tools=True,  # overwrite any existing tools with the ones provided
         llm_config={
             "config_list": config_list,
-            "tools": [monitor_optimal_risk_schema],
+            "tools": [optimize_for_target_risk_schema],
         },
     )
 
     risk_agent.register_function(
         function_map={
-            "monitor_optimal_risk": monitor_optimal_risk,
+            "optimize_for_target_risk": optimize_for_target_risk,
         },
     )
 
@@ -167,7 +211,7 @@ def main(user_query: str):
 ##        },
 ##    )
 
-    groupchat = autogen.GroupChat(agents=[user, entrypoint_agent, risk_calc_agent], messages=[], max_round=15)
+    groupchat = autogen.GroupChat(agents=[user, entrypoint_agent, portfolio_calc_agent], messages=[], max_round=10,send_introductions=True)
     group_chat_manager = autogen.GroupChatManager(groupchat=groupchat, llm_config={"config_list": config_list})
 
     result = user.initiate_chat(group_chat_manager, message=user_query,summary_method="last_msg")
@@ -176,4 +220,4 @@ def main(user_query: str):
 if __name__ == "__main__":
     #assert len(sys.argv) > 1, 
     #main(sys.argv[1])
-    main("file_path is 'D:/Witold/Documents/Computing/LLMAgentsOfficial/Hackathon/sp500_stock_data.csv', ticker is NVDA, size is 1 and the starting date is 2024-03-01")
+    main("file_path is 'D:/Witold/Documents/Computing/LLMAgentsOfficial/Hackathon/sp500_stock_data.csv', tickers are UAL and SCHO with weights 100% and 0%, size is 1 and the starting date is 2024-08-01 and the target risk is 3")

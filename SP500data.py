@@ -14,6 +14,7 @@ def get_sp500_tickers():
     table = pd.read_html('https://en.wikipedia.org/wiki/List_of_S%26P_500_companies')
     tickers_df = table[0]
     tickers = tickers_df['Symbol'].tolist()
+    tickers.append('SCHO')
     return tickers
 
 def download_sp500_data():
@@ -41,6 +42,8 @@ def download_sp500_data():
         
             stock_data = stock_data[['Ticker', 'CUSIP', 'Date', 'Open', 'High', 'Low', 'Close']]
             all_data = pd.concat([all_data, stock_data], ignore_index=True)
+            stock_data['Date'] = pd.to_datetime(stock_data['Date']).dt.date
+            #stock_data['Date'] = stock_data['Date'].dt.strftime('%Y-%m-%d')
         
         except Exception as e:
             print(f"Failed to download data for {ticker}: {e}")
@@ -49,12 +52,12 @@ def download_sp500_data():
 
 sp500_data = download_sp500_data()
 
-##def run_down():
-##    sp500_data = download_sp500_data()
-##    
-##    # Save the combined data to a CSV file
-##    filename = "D:\Witold\Documents\Computing\LLMAgentsOfficial\Hackathon\sp500_stock_data.csv"
-##    sp500_data.to_csv(filename, index=False)
-##    print(f"All data saved to {filename}")
-##
-##run_down()
+def run_down():
+    sp500_data = download_sp500_data()
+    
+    # Save the combined data to a CSV file
+    filename = "D:\Witold\Documents\Computing\LLMAgentsOfficial\Hackathon\sp500_stock_data.csv"
+    sp500_data.to_csv(filename, index=False, date_format='%Y-%m-%d')
+    print(f"All data saved to {filename}")
+
+run_down()
