@@ -15,7 +15,7 @@ from var_cov import calc_cov_matrix, portfolio_volatility, optimize_for_target_r
 
 config_list=[{"model": "gpt-4o-mini", "api_key": os.environ["OPENAI_API_KEY"]}]
 
-def find_cluster(stocks: Annotated[list, "List of stocks user is interested in investing"], size: Annotated[int, "Number of similar stocks"]):
+def find_cluster(stocks: Annotated[list, "List of stocks user is interested in investing"], size: Annotated[int, "Number of similar stocks"]) -> Annotated[list, "List of stocks we suggest user to invest in"]:
     """
     This will take as an input list of stocks that user is interested in. Will run encoder decoder neural network dinding stocks that recently
     behaved in a similar way
@@ -38,7 +38,6 @@ def monitor_optimal_risk(cluster: Annotated[list, "Computes risk for the last 30
         rosk for the investments
     """
     pass
-
 
 def main(user_query: str):
 
@@ -81,9 +80,13 @@ def main(user_query: str):
         description="Computes optimal weights given target",
     )
 
+    assistant_config_entrypoint_agent={
+    "assistant_id": "asst_HvA1lWZdgAvx3kk9KJknWngp",
+    }
 
     entrypoint_agent = GPTAssistantAgent(
         name="entrypoint_agent",
+        assistant_config=assistant_config_entrypoint_agent,
         instructions="""
         As 'entrypoint_agent', your primary role is to find out stocks that user/investor is interested in and then find similar stocks:
 
@@ -136,22 +139,28 @@ def main(user_query: str):
 ##        },
 ##    )
 
+    assistant_config_portfolio_calc_agent={
+    "assistant_id": "asst_rFWlt3Xv2Yuw3tps6AbdT8kO",
+    }
+
     portfolio_calc_agent = GPTAssistantAgent(
         name="portfolio_calc_agent",
+        assistant_config=assistant_config_portfolio_calc_agent,
+        #assistant_config=assistant_config,
         instructions="""
-        As 'portfolio_calc_agent', You compute risk for the last 30 days for a cluster as follows:
+        As 'portfolio_calc_agent', You compute risk for each day for 15 days for a portfolio as follows:
 
         1. The inputs were communicated earlier to you by the entrypoint_agent
         2. As the first input to the function take file_path
         3. Second argument is python list of tickers from entrypoint_agent
         4. Third argument is the staring date (str): The base date in 'YYYY-MM-DD' format.
         5. Fourth argument are portfolio weights. Remember that portfolio weights must correspond to the order of tickers
-        6. You run the function for the next 15 days adding one day to the staring date each time
-        7. After each run of the function you communicate the portfolio_risk to risk_agent and wait for his reply before proceeding further
-        8. If the risk_agent says OK you move to the new date
-        9. If the risk_agent says New Weights take the New Weights and you move to the new date
+        6. You run the function for the next day
+        7. After each run of the function you communicate the portfolio_risk value to risk_agent and wait for his reply before proceeding further
+        8. If the risk_agent says OK you move date but one day and run 'portfolio_volatility' function again
+        9. If the risk_agent says NEW WEIGHTS take the New Weights and you move date b one day and run 'portfolio_volatility' function again
         10. If there is no results for a given date you omit it and not communicate it
-        11. Once you reach 15 days you say Terminate
+        11. Once you reach 15 days you say TERMINATE
         """,
         overwrite_instructions=True,  # overwrite any existing instructions with the ones provided
         overwrite_tools=True,  # overwrite any existing tools with the ones provided
@@ -167,8 +176,13 @@ def main(user_query: str):
         },
     )
 
+    assistant_config_risk_agent={
+    "assistant_id": "asst_WBAp2Sblc8nJieP4cveQ1jFf",
+    }
+
     risk_agent = GPTAssistantAgent(
         name="risk_agent",
+        assistant_config=assistant_config_risk_agent,
         instructions="""
         As 'risk_agent', You adjust portfolio weights communicating with portfolio_calc_agent as follows:
 
@@ -211,7 +225,26 @@ def main(user_query: str):
 ##        },
 ##    )
 
-    groupchat = autogen.GroupChat(agents=[user, entrypoint_agent, portfolio_calc_agent], messages=[], max_round=10,send_introductions=True)
+    def state_transition(last_speaker, groupchat):
+        messages = groupchat.messages
+
+        if last_speaker is user:
+            # init -> retrieve
+            return entrypoint_agent
+        elif last_speaker is entrypoint_agent:
+            # init -> retrieve
+            return portfolio_calc_agent
+        elif last_speaker is portfolio_calc_agent:
+                return risk_agent
+        elif last_speaker is risk_agent:
+            if messages[-1]["content"] == "TERMINATE":
+                # retrieve --(execution failed)--> retrieve
+                return None
+            else:
+                # retrieve --(execution success)--> research
+                return portfolio_calc_agent
+
+    groupchat = autogen.GroupChat(agents=[user,entrypoint_agent, portfolio_calc_agent,risk_agent], messages=[], max_round=10,send_introductions=True,speaker_selection_method=state_transition)
     group_chat_manager = autogen.GroupChatManager(groupchat=groupchat, llm_config={"config_list": config_list})
 
     result = user.initiate_chat(group_chat_manager, message=user_query,summary_method="last_msg")

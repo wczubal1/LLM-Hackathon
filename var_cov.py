@@ -34,7 +34,7 @@ def calc_cov_matrix(file_path: Annotated[str, "File with stock price data"], tic
 
     return covariance_matrix
 
-def portfolio_volatility(file_path: Annotated[str, "File with stock price data"], tickers: Annotated[list, "List of stock tickers"], date: Annotated[str, "The base date in 'YYYY-MM-DD' format"], weights: Annotated[list, "Weights of stocks in a portfolio"]):
+def portfolio_volatility(file_path: Annotated[str, "File with stock price data"], tickers: Annotated[list, "List of stock tickers"], date: Annotated[str, "The base date in 'YYYY-MM-DD' format"], weights: Annotated[list, "Weights of stocks in a portfolio"]) -> Annotated[float, "portfolio risk or portfolio volatility"]:
 
     # Convert weights from percentages to decimals
     weights = np.array(weights) / 1
