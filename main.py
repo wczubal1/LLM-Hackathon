@@ -95,7 +95,7 @@ def main(user_query: str):
         3. The second input is size and it is int which is a number of stocks in portfolio.
         4. If the size is equal to 1 it means that the user is only interested in the particular stocks he mentioned. In this case simply send back only this particular stocks as python list.
         5. Put the tickers in alphabetical order in a python list and put the weights in the same order in another python list
-        6. Communicate to portfolio_calc_agent file_path, list of tickers, date and weights
+        6. Communicate file_path, list of tickers, date and weights
         """,
         overwrite_instructions=True,  # overwrite any existing instructions with the ones provided
         overwrite_tools=True,  # overwrite any existing tools with the ones provided
@@ -150,15 +150,15 @@ def main(user_query: str):
         instructions="""
         As 'portfolio_calc_agent', You compute risk for each day for 15 days for a portfolio as follows:
 
-        1. The inputs were communicated earlier to you by the entrypoint_agent
+        1. You run function "portfolio_volatility"
         2. As the first input to the function take file_path
         3. Second argument is python list of tickers from entrypoint_agent
         4. Third argument is the staring date (str): The base date in 'YYYY-MM-DD' format.
         5. Fourth argument are portfolio weights. Remember that portfolio weights must correspond to the order of tickers
         6. You run the function for the next day
-        7. After each run of the function you communicate the portfolio_risk value to risk_agent and wait for his reply before proceeding further
-        8. If the risk_agent says OK you move date but one day and run 'portfolio_volatility' function again
-        9. If the risk_agent says NEW WEIGHTS take the New Weights and you move date b one day and run 'portfolio_volatility' function again
+        7. After each run of the function you communicate the portfolio_risk value and say "RISK VALUE" and wait for his reply before proceeding further
+        8. If reply is OK you move date but one day and run 'portfolio_volatility' function again
+        9. If reply is "NEW WEIGHTS" take the New Weights and you move date by one day and run 'portfolio_volatility' function again
         10. If there is no results for a given date you omit it and not communicate it
         11. Once you reach 15 days you say TERMINATE
         """,
@@ -184,14 +184,14 @@ def main(user_query: str):
         name="risk_agent",
         assistant_config=assistant_config_risk_agent,
         instructions="""
-        As 'risk_agent', You adjust portfolio weights communicating with portfolio_calc_agent as follows:
+        As 'risk_agent', You adjust portfolio weights as follows:
 
-        1. portfolio_calc_agent gives you portfolio risk for a given day
-        2. If portfolio risk is less than target risk you say OK to portfolio_calc_agent and he moves to the next day
+        1. You take portfolio risk for a given day as an input
+        2. If portfolio risk is less than target risk you say OK
         3. If portfolio risk is greater than target risk you call optimize_for_target_risk function
         4. The function will produce new weights.
-        5. You say "New Weights" to portfolio_calc_agent and communicate updated weigths to portfolio_calc_agent
-        6. In the next step you wait for portfolio risk for a next day from portfolio_calc_agent
+        5. You say "NEW WEIGHTS"and communicate updated weigths
+        6. In the next step you wait to receive portfolio risk for the next day
         """,
         overwrite_instructions=True,  # overwrite any existing instructions with the ones provided
         overwrite_tools=True,  # overwrite any existing tools with the ones provided
@@ -235,7 +235,12 @@ def main(user_query: str):
             # init -> retrieve
             return portfolio_calc_agent
         elif last_speaker is portfolio_calc_agent:
+            if "RISK VALUE" in messages[-1]["content"]:
+                # retrieve --(execution failed)--> retrieve
                 return risk_agent
+            else:
+                # retrieve --(execution success)--> research
+                return portfolio_calc_agent
         elif last_speaker is risk_agent:
             if messages[-1]["content"] == "TERMINATE":
                 # retrieve --(execution failed)--> retrieve
@@ -253,4 +258,4 @@ def main(user_query: str):
 if __name__ == "__main__":
     #assert len(sys.argv) > 1, 
     #main(sys.argv[1])
-    main("file_path is 'D:/Witold/Documents/Computing/LLMAgentsOfficial/Hackathon/sp500_stock_data.csv', tickers are UAL and SCHO with weights 100% and 0%, size is 1 and the starting date is 2024-08-01 and the target risk is 3")
+    main("file_path is 'D:/Witold/Documents/Computing/LLMAgentsOfficial/Hackathon/sp500_stock_data.csv', tickers are UAL and SCHO with weights 100 and 0, size is 1 and the starting date is 2024-08-01 and the target risk is 0.02")
