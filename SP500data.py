@@ -50,14 +50,38 @@ def download_sp500_data():
 
     return all_data
 
-sp500_data = download_sp500_data()
+def download_sp500_fundaments():
+    tickers = get_sp500_tickers()  # Get S&P 500 tickers
+    tickers.remove('SCHO')
+    print(tickers)
+    data = {}
+    for ticker in tickers:
+        stock = yf.Ticker(ticker)
+        info = stock.info
+        
+        data[ticker] = {
+            "Ticker": ticker,
+            "Market Cap": info.get("marketCap"),
+            "PE Ratio": info.get("trailingPE"),
+            "Beta": info.get("beta"),
+            "EPS": info.get("trailingEps"),
+            "Industry": info.get("industry"),
+            "Sector": info.get("sector")
+        }
+    df = pd.DataFrame.from_dict(data, orient='index')   
+    return df
+    
 
 def run_down():
-    sp500_data = download_sp500_data()
-    
+    #sp500_data = download_sp500_data()
     # Save the combined data to a CSV file
-    filename = "D:\Witold\Documents\Computing\LLMAgentsOfficial\Hackathon\sp500_stock_data.csv"
-    sp500_data.to_csv(filename, index=False, date_format='%Y-%m-%d')
+    #filename = "D:\Witold\Documents\Computing\LLMAgentsOfficial\Hackathon\sp500_stock_data.csv"
+    #sp500_data.to_csv(filename, index=False, date_format='%Y-%m-%d')
+    
+    sp500_data_fundaments = download_sp500_fundaments()
+    # Save the combined data to a CSV file
+    filename = "D:\Witold\Documents\Computing\LLMAgentsOfficial\Hackathon\sp500_stock_data_fundaments.csv"
+    sp500_data_fundaments.to_csv(filename, index=False)
     print(f"All data saved to {filename}")
 
 run_down()

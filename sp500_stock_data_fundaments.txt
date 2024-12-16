@@ -1,0 +1,504 @@
+Ticker	Market Cap	PE Ratio	Beta	EPS	Industry	Sector
+MMM	70749102080	13.519251	1.001	9.61	Conglomerates	Industrials
+AOS	10510688256	19.126648	1.169	3.79	Specialty Industrial Machinery	Industrials
+ABT	1.96653E+11	34.462006	0.722	3.29	Medical Devices	Healthcare
+ABBV	3.06369E+11	60.197914	0.613	2.88	Drug Manufacturers - General	Healthcare
+ACN	2.24123E+11	31.353148	1.245	11.44	Information Technology Services	Technology
+ADBE	2.04997E+11	37.73825	1.299	12.34	Software - Infrastructure	Technology
+AMD	2.05951E+11	112.30974	1.706	1.13	Semiconductors	Technology
+AES	9492210688	9.270833	1.09	1.44	Utilities - Diversified	Utilities
+AFL	58063785984	15.53046	0.958	6.73	Insurance - Life	Financial Services
+A	39641825280	31.376976	1.072	4.43	Diagnostics & Research	Healthcare
+APD	69448957952	18.11485	0.826	17.24	Specialty Chemicals	Basic Materials
+ABNB	81813889024	45.468746	1.156	2.88	Travel Services	Consumer Cyclical
+AKAM	14908527616	29.360945	0.678	3.38	Software - Infrastructure	Technology
+ALB	11681125376		1.551	-16.76	Specialty Chemicals	Basic Materials
+ARE	17941067776	62.597565	1.176	1.64	REIT - Office	Real Estate
+ALGN	17572593664	40.16894	1.65	5.86	Medical Instruments & Supplies	Healthcare
+ALLE	12068393984	21.358461	1.123	6.5	Security & Protection Services	Industrials
+LNT	15511410688	23.521402	0.574	2.57	Utilities - Regulated Electric	Utilities
+ALL	51970236416	12.686489	0.481	15.47	Insurance - Property & Casualty	Financial Services
+GOOGL	2.33222E+12	25.175068	1.034	7.54	Internet Content & Information	Communication Services
+GOOG	2.33221E+12	25.381964	1.034	7.54	Internet Content & Information	Communication Services
+MO	93078962176	9.277026	0.67	5.92	Tobacco	Consumer Defensive
+AMZN	2.39174E+12	48.498936	1.146	4.69	Internet Retail	Consumer Cyclical
+AMCR	14308866048	18.679245	0.863	0.53	Packaging & Containers	Consumer Cyclical
+AMTM	5608111104	13.720238		1.68	Specialty Business Services	Industrials
+AEE	23980810240	21.138823	0.462	4.25	Utilities - Regulated Electric	Utilities
+AEP	49374101504	18.691532	0.539	4.96	Utilities - Regulated Electric	Utilities
+AXP	2.12841E+11	22.216177	1.214	13.6	Credit Services	Financial Services
+AIG	45454049280	14.487078	1.069	5.03	Insurance - Diversified	Financial Services
+AMT	92130697216	47.62319	0.842	4.14	REIT - Specialty	Real Estate
+AWK	25256312832	25.712301	0.698	5.04	Utilities - Regulated Water	Utilities
+AMP	53334749184	21.007261	1.334	26.17	Asset Management	Financial Services
+AME	43342495744	32.701572	1.163	5.73	Specialty Industrial Machinery	Industrials
+AMGN	1.45467E+11	34.606136	0.599	7.82	Drug Manufacturers - General	Healthcare
+APH	88769060864	42.074284	1.238	1.75	Electronic Components	Technology
+ADI	1.07503E+11	66.24159	1.078	3.27	Semiconductors	Technology
+ANSS	29753987072	52.344612	1.111	6.5	Software - Application	Technology
+AON	78113120256	30.9503	0.909	11.67	Insurance Brokers	Financial Services
+APA	8456988672	3.2471592	3.246	7.04	Oil & Gas E&P	Energy
+AAPL	3.75068E+12	40.810856	1.24	6.08	Consumer Electronics	Technology
+AMAT	1.39613E+11	19.69186	1.551	8.6	Semiconductor Equipment & Materials	Technology
+APTV	13625036800	6.455457	1.817	8.98	Auto Parts	Consumer Cyclical
+ACGL	35148525568	6.2697988	0.613	14.9	Insurance - Diversified	Financial Services
+ADM	25075183616	14.719102	0.722	3.56	Farm Products	Consumer Defensive
+ANET	1.41559E+11	54.02404	1.077	2.08	Computer Hardware	Technology
+AJG	71091437568	54.31107	0.727	5.24	Insurance Brokers	Financial Services
+AIZ	11171934208	15.54818	0.568	14.01	Insurance - Property & Casualty	Financial Services
+T	1.69552E+11	19.211382	0.73	1.23	Telecom Services	Communication Services
+ATO	21846132736	20.582724	0.672	6.83	Utilities - Regulated Gas	Utilities
+ADSK	65465163776	60.271824	1.474	5.04	Software - Application	Technology
+ADP	1.20917E+11	31.739037	0.795	9.35	Software - Application	Technology
+AZO	56654237696	22.52252	0.713	149.64	Specialty Retail	Consumer Cyclical
+AVB	32205299712	30.974009	0.985	7.31	REIT - Residential	Real Estate
+AVY	15678796800	23.42617	0.896	8.33	Packaging & Containers	Consumer Cyclical
+AXON	49177481216	166.6434	0.943	3.87	Aerospace & Defense	Industrials
+BKR	41708523520	18.901346	1.363	2.23	Oil & Gas Equipment & Services	Energy
+BALL	17380329472	24.266666	0.899	2.4	Packaging & Containers	Consumer Cyclical
+BAC	3.5042E+11	16.5471	1.325	2.76	Banks - Diversified	Financial Services
+BAX	15481027584	121.28	0.604	0.25	Medical Instruments & Supplies	Healthcare
+BDX	65214353408	38.491467	0.45	5.86	Medical Instruments & Supplies	Healthcare
+BRK.B						
+BBY	18728529920	14.999999	1.493	5.84	Specialty Retail	Consumer Cyclical
+TECH	12026535936	79.67369	1.278	0.95	Biotechnology	Healthcare
+BIIB	21862221824	13.565099	-0.061	11.06	Drug Manufacturers - General	Healthcare
+BLK	1.63636E+11	26.042397	1.311	40.57	Asset Management	Financial Services
+BX	2.28531E+11	64.97241	1.486	2.9	Asset Management	Financial Services
+BK	57315561472	17.635347	1.06	4.47	Banks - Diversified	Financial Services
+BA	1.26928E+11		1.572	-12.94	Aerospace & Defense	Industrials
+BKNG	1.73017E+11	35.336014	1.385	147.94	Travel Services	Consumer Cyclical
+BWA	7446734848	8.428218	1.186	4.04	Auto Parts	Consumer Cyclical
+BSX	1.32807E+11	74.47107	0.797	1.21	Medical Devices	Healthcare
+BMY	1.13132E+11		0.441	-3.58	Drug Manufacturers - General	Healthcare
+AVGO	1.04995E+12	175.625	1.187	1.28	Semiconductors	Technology
+BR	27297087488	40.333332	1.06	5.79	Information Technology Services	Technology
+BRO	29793966080	28.389647	0.825	3.67	Insurance Brokers	Financial Services
+BF.B						
+BLDR	19153596416	16.25293	2.081	10.24	Building Products & Equipment	Industrials
+BG	11540172800	10.475286	0.655	7.89	Farm Products	Consumer Defensive
+BXP	14097573888	34.752174	1.195	2.3	REIT - Office	Real Estate
+CHRW	13165672448	38.673607	0.842	2.88	Integrated Freight & Logistics	Industrials
+CDNS	84130177024	80.72369	1.02	3.8	Software - Application	Technology
+CZR	7863884288		2.962	-1.68	Resorts & Casinos	Consumer Cyclical
+CPT	12819855360	37.908516	0.92	3.17	REIT - Residential	Real Estate
+CPB	12815706112	23.491804	0.181	1.83	Packaged Foods	Consumer Defensive
+COF	70400040960	17.424929	1.432	10.59	Credit Services	Financial Services
+CAH	28581380096	22.711538	0.616	5.2	Medical Distribution	Healthcare
+KMX	13363744768	32.42857	1.686	2.66	Auto & Truck Dealerships	Consumer Cyclical
+CCL	34753912832	22.136753	2.668	1.17	Travel Services	Consumer Cyclical
+CARR	65506545664	42.94706	1.212	1.7	Building Products & Equipment	Industrials
+CTLT	11447961600		1.158	-2.28	Drug Manufacturers - Specialty & Generic	Healthcare
+CAT	1.83711E+11	17.665274	1.095	21.54	Farm & Heavy Construction Machinery	Industrials
+CBOE	21039792128	27.38147	0.666	7.34	Financial Data & Stock Exchanges	Financial Services
+CBRE	42016268288	44.43366	1.395	3.09	Real Estate Services	Real Estate
+CDW	23462459392	21.496948	1.053	8.19	Information Technology Services	Technology
+CE	7496616960	6.8306775	1.304	10.04	Chemicals	Basic Materials
+COR	44887347200	30.88298	0.436	7.52	Medical Distribution	Healthcare
+CNC	29999077376	10.262522	0.493	5.79	Healthcare Plans	Healthcare
+CNP	20816160768	21.293333	0.917	1.5	Utilities - Regulated Electric	Utilities
+CF	15574790144	14.183835	0.957	6.31	Agricultural Inputs	Basic Materials
+CRL	9739401216	23.748129	1.376	8.02	Diagnostics & Research	Healthcare
+SCHW	1.45603E+11	31.070314	0.952	2.56	Capital Markets	Financial Services
+CHTR	53998641152	11.90533	1.036	31.9	Telecom Services	Communication Services
+CVX	2.74338E+11	16.927391	1.078	9.09	Oil & Gas Integrated	Energy
+CMG	88009678848	59.80555	1.266	1.08	Restaurants	Consumer Cyclical
+CB	1.11291E+11	11.324447	0.681	24.38	Insurance - Property & Casualty	Financial Services
+CHD	25881587712	47.372196	0.55	2.23	Household & Personal Products	Consumer Defensive
+CI	78400200704	26.741934	0.511	10.54	Healthcare Plans	Healthcare
+CINF	23794270208	7.826221	0.666	19.45	Insurance - Property & Casualty	Financial Services
+CTAS	85184815104	53.47342	1.313	3.95	Specialty Business Services	Industrials
+CSCO	2.33469E+11	25.158798		2.33	Communication Equipment	Technology
+C	1.34298E+11	20.23077	1.426	3.51	Banks - Diversified	Financial Services
+CFG	20140036096	17.92157	1.32	2.55	Banks - Regional	Financial Services
+CLX	20411486208	57.05882	0.399	2.89	Household & Personal Products	Consumer Defensive
+CME	85474263040	24.941114	0.559	9.51	Financial Data & Stock Exchanges	Financial Services
+CMS	20114204672	19.179487	0.407	3.51	Utilities - Regulated Electric	Utilities
+KO	2.71908E+11	26.19087	0.62	2.41	Beverages - Non-Alcoholic	Consumer Defensive
+CTSH	39695667200	17.712389	1.052	4.52	Information Technology Services	Technology
+CL	76341510144	26.850574	0.415	3.48	Household & Personal Products	Consumer Defensive
+CMCSA	1.52755E+11	10.760107	1.004	3.71	Telecom Services	Communication Services
+CAG	13459098624	27.64706	0.332	1.02	Packaged Foods	Consumer Defensive
+COP	1.30675E+11	11.983392	1.22	8.43	Oil & Gas E&P	Energy
+ED	32113190912	17.422932	0.353	5.32	Utilities - Regulated Electric	Utilities
+STZ	43519143936	76.32484	0.893	3.14	Beverages - Brewers	Consumer Defensive
+CEG	74773209088	26.387417	0.776	9.06	Utilities - Renewable	Utilities
+COO	18930448384	48.392857	0.99	1.96	Medical Instruments & Supplies	Healthcare
+CPRT	58996817920	42.818184	1.271	1.43	Specialty Business Services	Industrials
+GLW	41226465280	253.42107	1.029	0.19	Electronic Components	Technology
+CPAY	24891707392	25.505001	1.214	14	Software - Infrastructure	Technology
+CTVA	40887062528	61.968754	0.773	0.96	Agricultural Inputs	Basic Materials
+CSGP	30775697408	178.7381	0.823	0.42	Real Estate Services	Real Estate
+COST	4.39214E+11	58.12867	0.789	17.02	Discount Stores	Consumer Defensive
+CTRA	18654150656	15.351516	0.197	1.65	Oil & Gas E&P	Energy
+CRWD	90647371776	707.7308	1.102	0.52	Software - Infrastructure	Technology
+CCI	42203811840	34.436172	0.875	2.82	REIT - Specialty	Real Estate
+CSX	64100683776	17.680853	1.191	1.88	Railroads	Industrials
+CMI	50415759360	24.099016	0.971	15.25	Specialty Industrial Machinery	Industrials
+CVS	62127697920	12.530457	0.543	3.94	Healthcare Plans	Healthcare
+DHR	1.69655E+11	44.235405	0.881	5.31	Diagnostics & Research	Healthcare
+DRI	19586074624	19.226067	1.309	8.67	Restaurants	Consumer Cyclical
+DVA	12527524864	16.440258	0.887	9.29	Medical Care Facilities	Healthcare
+DAY	12169708544	226.97058	1.271	0.34	Software - Application	Technology
+DECK	31391643648	36.50707	1.053	5.66	Footwear & Accessories	Consumer Cyclical
+DE	1.19612E+11	17.18455	0.935	25.63	Farm & Heavy Construction Machinery	Industrials
+DELL	82969370624	20.964602	0.954	5.65	Computer Hardware	Technology
+DAL	39697690624	8.532594	1.341	7.21	Airlines	Industrials
+DVN	22255771648	6.274074	2.071	5.4	Oil & Gas E&P	Energy
+DXCM	30150029312	46.781822	1.173	1.65	Medical Devices	Healthcare
+FANG	47693479936	9.425274	1.875	17.33	Oil & Gas E&P	Energy
+DLR	62563684352	151.67212	0.609	1.22	REIT - Specialty	Real Estate
+DFS	44188672000	14.159291	1.402	12.43	Credit Services	Financial Services
+DG	16921107456	12.69637	0.449	6.06	Discount Stores	Consumer Defensive
+DLTR	15072082944		0.874	-4.7	Discount Stores	Consumer Defensive
+D	45394141184	19.94096	0.596	2.71	Utilities - Regulated Electric	Utilities
+DPZ	15648867328	27.853104	0.859	16.27	Restaurants	Consumer Cyclical
+DOV	27576963072	18.24047	1.218	11.02	Specialty Industrial Machinery	Industrials
+DOW	28605761536	27.24	1.222	1.5	Chemicals	Basic Materials
+DHI	48133742592	10.451185	1.744	14.34	Residential Construction	Consumer Cyclical
+DTE	25117208576	16.411367	0.683	7.39	Utilities - Regulated Electric	Utilities
+DUK	84061487104	19.536804	0.457	5.57	Utilities - Regulated Electric	Utilities
+DD	33787482112	63.15625	1.338	1.28	Specialty Chemicals	Basic Materials
+EMN	11417430016	13.203753	1.459	7.46	Specialty Chemicals	Basic Materials
+ETN	1.40695E+11	37.873405	1.01	9.4	Specialty Industrial Machinery	Industrials
+EBAY	30579359744	16.080605	1.337	3.97	Internet Retail	Consumer Cyclical
+ECL	70847127552	35.091164	1.141	7.13	Specialty Chemicals	Basic Materials
+EIX	31703713792	23.944445	0.935	3.42	Utilities - Regulated Electric	Utilities
+EW	43244134400	28.308882	1.12	2.59	Medical Devices	Healthcare
+EA	41339465728	40.51928	0.781	3.89	Electronic Gaming & Multimedia	Communication Services
+ELV	88457756672	13.889658	0.853	27.46	Healthcare Plans	Healthcare
+EMR	74240040960	46.00707	1.292	2.83	Specialty Industrial Machinery	Industrials
+ENPH	9976300544	160.52173	1.767	0.46	Solar	Technology
+ETR	31835299840	18.06326	0.701	4.11	Utilities - Regulated Electric	Utilities
+EOG	71301783552	10.231638	1.289	12.39	Oil & Gas E&P	Energy
+EPAM	13876323328	31.73022	1.457	7.71	Information Technology Services	Technology
+EQT	27202824192	60.786667	1.069	0.75	Oil & Gas E&P	Energy
+EFX	32947681280	59.200447	1.594	4.49	Consulting Services	Industrials
+EQIX	93111115776	86.936935	0.701	11.1	REIT - Specialty	Real Estate
+EQR	28659294208	30.919832	0.913	2.37	REIT - Residential	Real Estate
+ERIE	22002544640	39.362022	0.454	10.69	Insurance Brokers	Financial Services
+ESS	19965984768	34.98133	0.897	8.57	REIT - Residential	Real Estate
+EL	28732598272	142.92857	1.044	0.56	Household & Personal Products	Consumer Defensive
+EG	15593065472	5.659179	0.629	64.11	Insurance - Reinsurance	Financial Services
+EVRG	14237813760	16.732431	0.608	3.7	Utilities - Regulated Electric	Utilities
+ES	21808246784		0.622	-1.61	Utilities - Regulated Electric	Utilities
+EXC	37048082432	15.172838	0.61	2.43	Utilities - Regulated Electric	Utilities
+EXPE	23487318016	23.797138	1.785	7.69	Travel Services	Consumer Cyclical
+EXPD	16588556288	23.101364	0.974	5.13	Integrated Freight & Logistics	Industrials
+EXR	34892746752	42.186665	0.886	3.75	REIT - Industrial	Real Estate
+XOM	4.87152E+11	13.820448	0.88	8.02	Oil & Gas Integrated	Energy
+FFIV	15345967104	27.385983	1.05	9.56	Software - Infrastructure	Technology
+FDS	18566645760	35.085426	0.752	13.93	Financial Data & Stock Exchanges	Financial Services
+FICO	52807913472	106.37028	1.352	20.39	Software - Application	Technology
+FAST	44954365952	39.039803	0.979	2.01	Industrial Distribution	Industrials
+FRT	9778954240	33.212208	1.258	3.44	REIT - Retail	Real Estate
+FDX	69246033920	17.516687	1.177	16.18	Integrated Freight & Logistics	Industrials
+FIS	45275570176	86.70103	1.074	0.97	Information Technology Services	Technology
+FITB	30543233024	15.183333	1.231	3	Banks - Regional	Financial Services
+FSLR	21376270336	17.21293	1.481	11.6	Solar	Technology
+FE	23208286208	25.980646	0.495	1.55	Utilities - Regulated Electric	Utilities
+FI	1.16435E+11	39.509655	0.919	5.18	Information Technology Services	Technology
+FMC	6678726144	4.3888435	0.853	12.19	Agricultural Inputs	Basic Materials
+F	41292873728	11.806819	1.636	0.88	Auto Manufacturers	Consumer Cyclical
+FTNT	75074068480	49.221104	0.995	1.99	Software - Infrastructure	Technology
+FTV	26666500096	30.744	1.174	2.5	Scientific & Technical Instruments	Technology
+FOXA	20947165184	11.511003	0.77	4.09	Entertainment	Communication Services
+FOX	20947161088	10.933985	0.77	4.09	Entertainment	Communication Services
+BEN	11504986112	25.847057	1.402	0.85	Asset Management	Financial Services
+FCX	59761922048	30.137682	1.91	1.38	Copper	Basic Materials
+GRMN	41362182144	27.40458	0.983	7.86	Scientific & Technical Instruments	Technology
+IT	39219707904	37.580193	1.322	13.53	Information Technology Services	Technology
+GE	1.79671E+11	32.8083	1.188	5.06	Aerospace & Defense	Industrials
+GEHC	37052399616	22.219177		3.65	Health Information Services	Healthcare
+GEV	91519549440	78.67536		4.22	Utilities - Renewable	Utilities
+GEN	18402598912	30.161617	1.054	0.99	Software - Infrastructure	Technology
+GNRC	9950923776	34.84375	1.367	4.8	Specialty Industrial Machinery	Industrials
+GD	72347090944	20.038841	0.614	13.13	Aerospace & Defense	Industrials
+GIS	37023551488	15.878572	0.107	4.2	Packaged Foods	Consumer Defensive
+GM	57761988608	5.6061897	1.414	9.37	Auto Manufacturers	Consumer Cyclical
+GPC	16853944320	15.621134	0.933	7.76	Auto Parts	Consumer Cyclical
+GILD	1.14476E+11	1020.6111	0.192	0.09	Drug Manufacturers - General	Healthcare
+GPN	29065875456	21.549055	0.979	5.3	Specialty Business Services	Industrials
+GL	8849492992	8.933898	0.807	11.8	Insurance - Life	Financial Services
+GDDY	29030051840	16.582197	1.114	12.47	Software - Infrastructure	Technology
+GS	1.83788E+11	17.15441	1.342	34.13	Capital Markets	Financial Services
+HAL	25195438080	10.027972	1.905	2.86	Oil & Gas Equipment & Services	Energy
+HIG	32490985472	11.253013	0.936	9.96	Insurance - Property & Casualty	Financial Services
+HAS	8615580672		0.619	-4.64	Leisure	Consumer Cyclical
+HCA	79517523968	14.102875	1.689	22.26	Medical Care Facilities	Healthcare
+DOC	14520436736	42.367348	1.117	0.49	REIT - Healthcare Facilities	Real Estate
+HSIC	9550564352	31.393442	0.867	2.44	Medical Distribution	Healthcare
+HSY	37051203584	21.045979	0.374	8.7	Confectioners	Consumer Defensive
+HES	43198144512	16.340326	1.16	8.58	Oil & Gas E&P	Energy
+HPE	28313507840	11.310881	1.206	1.93	Communication Equipment	Technology
+HLT	61617831936	54.00855	1.307	4.68	Lodging	Consumer Cyclical
+HOLX	16714204160	22.183735	0.986	3.32	Medical Instruments & Supplies	Healthcare
+HD	4.14213E+11	28.327446	1.011	14.72	Home Improvement Retail	Consumer Cyclical
+HON	1.48009E+11	26.314451	1.025	8.65	Conglomerates	Industrials
+HRL	18084487168	22.408161	0.254	1.47	Packaged Foods	Consumer Defensive
+HST	13164469248	18.038836	1.344	1.03	REIT - Hotel & Motel	Real Estate
+HWM	46082183168	43.626926	1.293	2.6	Aerospace & Defense	Industrials
+HPQ	32400920576	12.295374	1.087	2.81	Computer Hardware	Technology
+HUBB	24346011648	32.681557	0.899	13.88	Electrical Equipment & Parts	Industrials
+HUM	33007063040	23.91972	0.52	11.46	Healthcare Plans	Healthcare
+HBAN	24944748544	16.669903	1.057	1.03	Banks - Regional	Financial Services
+HII	7518303744	10.855367	0.548	17.7	Aerospace & Defense	Industrials
+IBM	2.13427E+11	33.647232	0.71	6.86	Information Technology Services	Technology
+IEX	16886294528	34.62733	0.952	6.44	Specialty Industrial Machinery	Industrials
+IDXX	35382382592	41.668274	1.357	10.37	Diagnostics & Research	Healthcare
+ITW	80354074624	23.579721	1.109	11.54	Specialty Industrial Machinery	Industrials
+INCY	13206158336	761.6667	0.71	0.09	Biotechnology	Healthcare
+IR	40744513536	49.317074	1.422	2.05	Specialty Industrial Machinery	Industrials
+PODD	18892800000	45.884155	1.219	5.87	Medical Devices	Healthcare
+INTC	87726415872		1.026	-3.74	Semiconductors	Technology
+ICE	89330458624	36.867302	1.092	4.22	Financial Data & Stock Exchanges	Financial Services
+IFF	22346606592		1.238	-9.08	Specialty Chemicals	Basic Materials
+IP	19295041536	47.47009	0.988	1.17	Packaging & Containers	Consumer Cyclical
+IPG	11134473216	14.099057	1.09	2.12	Advertising Agencies	Communication Services
+INTU	1.83752E+11	63.671192	1.246	10.31	Software - Application	Technology
+ISRG	1.92187E+11	86.88889	1.389	6.21	Medical Instruments & Supplies	Healthcare
+IVZ	8107897856		1.424	-0.91	Asset Management	Financial Services
+INVH	20258881536	45.930553	1.014	0.72	REIT - Residential	Real Estate
+IQV	36129390592	26.192104	1.513	7.6	Diagnostics & Research	Healthcare
+IRM	32838174720	310.8333	1.023	0.36	REIT - Specialty	Real Estate
+JBHT	18128224256	32.68909	1.141	5.5	Integrated Freight & Logistics	Industrials
+JBL	15093075968	12.086762	1.245	11.18	Electronic Components	Technology
+JKHY	13118082048	32.8702	0.636	5.47	Information Technology Services	Technology
+J	16982240256	28.599167	0.702	4.79	Engineering & Construction	Industrials
+JNJ	3.53005E+11	24.19472	0.518	6.06	Drug Manufacturers - General	Healthcare
+JCI	54716346368	39.72596	1.306	2.08	Building Products & Equipment	Industrials
+JPM	6.75513E+11	13.33	1.091	18	Banks - Diversified	Financial Services
+JNPR	12326443008	48.986843	0.921	0.76	Communication Equipment	Technology
+K	27768868864	26.943144	0.395	2.99	Packaged Foods	Consumer Defensive
+KVUE	42582343680	40.381817		0.55	Household & Personal Products	Consumer Defensive
+KDP	45508898816	20.210844	0.634	1.66	Beverages - Non-Alcoholic	Consumer Defensive
+KEY	17971959808	Infinity	1.231		Banks - Regional	Financial Services
+KEYS	28736733184	47.435898	0.981	3.51	Scientific & Technical Instruments	Technology
+KMB	43799916544	17.012953	0.412	7.72	Household & Personal Products	Consumer Defensive
+KIM	16589134848	45.574074	1.485	0.54	REIT - Retail	Real Estate
+KMI	59717681152	23.78761	0.907	1.13	Oil & Gas Midstream	Energy
+KKR	1.42425E+11	47.78328	1.606	3.23	Asset Management	Financial Services
+KLAC	87446937600	29.852057	1.29	21.9	Semiconductor Equipment & Materials	Technology
+KHC	38318600192	28.54955	0.475	1.11	Packaged Foods	Consumer Defensive
+KR	44931440640	16.41799	0.471	3.78	Grocery Stores	Consumer Defensive
+LHX	42326310912	35.19874	0.726	6.34	Aerospace & Defense	Industrials
+LH	19405152256	44.024666	1.036	5.27	Diagnostics & Research	Healthcare
+LRCX	98122989568	24.679613	1.486	3.09	Semiconductor Equipment & Materials	Technology
+LW	11303743488	18.607979	0.715	4.26	Packaged Foods	Consumer Defensive
+LVS	39057149952	26.668316	1.117	2.02	Resorts & Casinos	Consumer Cyclical
+LDOS	20436598784	17.424347	0.688	8.79	Information Technology Services	Technology
+LEN	41658593280	10.2584715	1.619	15.05	Residential Construction	Consumer Cyclical
+LLY	7.09668E+11	84.76047	0.43	9.31	Drug Manufacturers - General	Healthcare
+LIN	2.07272E+11	33.002274	0.949	13.19	Specialty Chemicals	Basic Materials
+LYV	31349934080	154.48863	1.334	0.88	Entertainment	Communication Services
+LKQ	9873281024	14.01476	1.286	2.71	Auto Parts	Consumer Cyclical
+LMT	1.17249E+11	17.889692	0.481	27.65	Aerospace & Defense	Industrials
+L	18231451648	11.194149	0.818	7.52	Insurance - Property & Casualty	Financial Services
+LOW	1.48159E+11	21.82945	1.098	12.02	Home Improvement Retail	Consumer Cyclical
+LULU	47694270464	28.337917	1.237	13.82	Apparel Retail	Consumer Cyclical
+LYB	24574361600	11.482549	1.091	6.59	Specialty Chemicals	Basic Materials
+MTB	33066393600	14.751294	0.732	13.51	Banks - Regional	Financial Services
+MPC	46781382656	11.283721	1.371	12.9	Oil & Gas Refining & Marketing	Energy
+MKTX	8812649472	31.627876	1.053	7.39	Capital Markets	Financial Services
+MAR	79777513472	30.029285	1.585	9.56	Lodging	Consumer Cyclical
+MMC	1.05626E+11	26.519114	0.937	8.11	Insurance Brokers	Financial Services
+MLM	33671182336	17.093391	0.897	32.23	Building Materials	Basic Materials
+MAS	16992391168	20.94681	1.25	3.76	Building Products & Equipment	Industrials
+MA	4.85533E+11	39.984882	1.101	13.23	Credit Services	Financial Services
+MTCH	7896812544	14.103139	1.487	2.23	Internet Content & Information	Communication Services
+MKC	21614327808	27.40136	0.764	2.94	Packaged Foods	Consumer Defensive
+MCD	2.1255E+11	26.040386	0.735	11.39	Restaurants	Consumer Cyclical
+MCK	73147908096	29.856995	0.436	19.3	Medical Distribution	Healthcare
+MDT	1.05763E+11	25.223244	0.853	3.27	Medical Devices	Healthcare
+MRK	2.58023E+11	21.338911	0.411	4.78	Drug Manufacturers - General	Healthcare
+META	1.56607E+12	29.234213	1.215	21.22	Internet Content & Information	Communication Services
+MET	57463930880	16.833672	1.039	4.93	Insurance - Life	Financial Services
+MTD	26947725312	34.485012	1.159	37.03	Diagnostics & Research	Healthcare
+MGM	10793074688	12.992832	2.241	2.79	Resorts & Casinos	Consumer Cyclical
+MCHP	32183009280	41.618053	1.526	1.44	Semiconductors	Technology
+MU	1.14189E+11	146.42857	1.179	0.7	Semiconductors	Technology
+MSFT	3.3254E+12	36.903465	0.904	12.12	Software - Infrastructure	Technology
+MAA	18859483136	35.489845	0.874	4.43	REIT - Residential	Real Estate
+MRNA	16096936960		1.69	-5.81	Biotechnology	Healthcare
+MHK	8067533312	14.4255085	1.389	8.86	"Furnishings, Fixtures & Appliances"	Consumer Cyclical
+MOH	17332744192	15.405185	0.586	19.67	Healthcare Plans	Healthcare
+TAP	12582984704	13.754504	0.827	4.44	Beverages - Brewers	Consumer Defensive
+MDLZ	82812174336	21.960993	0.561	2.82	Confectioners	Consumer Defensive
+MPWR	29679704064	68.51802	1.148	8.88	Semiconductors	Technology
+MNST	51310153728	33.820515	0.742	1.56	Beverages - Non-Alcoholic	Consumer Defensive
+MCO	88625586176	44.65936	1.289	10.95	Financial Data & Stock Exchanges	Financial Services
+MS	2.05246E+11	19.391172	1.336	6.57	Capital Markets	Financial Services
+MOS	8509709824	23.707966	1.36	1.13	Agricultural Inputs	Basic Materials
+MSI	78511775744	51.568607	0.979	9.11	Communication Equipment	Technology
+MSCI	48989896704	41.152073	1.11	15.19	Financial Data & Stock Exchanges	Financial Services
+NDAQ	46049611776	48.265064	0.96	1.66	Financial Data & Stock Exchanges	Financial Services
+NTAP	24793165824	22.458563	1.225	5.43	Computer Hardware	Technology
+NFLX	3.92778E+11	51.82572	1.25	17.73	Entertainment	Communication Services
+NEM	45788463104		0.531	-2.19	Gold	Basic Materials
+NWSA	16789091328	46.14516	1.351	0.62	Entertainment	Communication Services
+NWS	16789089280	50.69355	1.351	0.62	Entertainment	Communication Services
+NEE	1.51392E+11	21.8457	0.561	3.37	Utilities - Regulated Electric	Utilities
+NKE	1.14987E+11	22.13467	1.035	3.49	Footwear & Accessories	Consumer Cyclical
+NI	17060772864	22.286585	0.507	1.64	Utilities - Regulated Gas	Utilities
+NDSN	12949322752	27.923553	0.907	8.11	Specialty Industrial Machinery	Industrials
+NSC	55704813568	23.09756	1.302	10.66	Railroads	Industrials
+NTRS	20808927232	13.073475	1.073	8.03	Asset Management	Financial Services
+NOC	69933604864	29.593096	0.346	16.22	Aerospace & Defense	Industrials
+NCLH	11784173568	23.508772	2.682	1.14	Travel Services	Consumer Cyclical
+NRG	19239718912	23.509903	1.088	4.04	Utilities - Independent Power Producers	Utilities
+NUE	29410326528	12.04327	1.567	10.4	Steel	Basic Materials
+NVDA	3.28778E+12	52.854332	1.657	2.54	Semiconductors	Technology
+NVR	26311467008	17.574553	1.201	488.64	Residential Construction	Consumer Cyclical
+NXPI	55111184384	20.7106	1.494	10.47	Semiconductors	Technology
+ORLY	73352626176	31.44271	0.92	40.41	Specialty Retail	Consumer Cyclical
+OXY	44702658560	13.052054	1.608	3.65	Oil & Gas E&P	Energy
+ODFL	42846912512	35.085667	0.989	5.72	Trucking	Industrials
+OMC	17739841536	12.338798	0.968	7.32	Advertising Agencies	Communication Services
+ON	28085569536	16.367245	1.654	4.03	Semiconductors	Technology
+OKE	60779630592	22.040255	1.625	4.72	Oil & Gas Midstream	Energy
+ORCL	4.84965E+11	42.393642	1.013	4.09	Software - Infrastructure	Technology
+OTIS	39063289856	24.32587	0.942	4.02	Specialty Industrial Machinery	Industrials
+PCAR	59251257344	12.640941	0.89	8.94	Farm & Heavy Construction Machinery	Industrials
+PKG	21382545408	27.782965	0.777	8.57	Packaging & Containers	Consumer Cyclical
+PLTR	1.73289E+11	380.35	2.697	0.2	Software - Infrastructure	Technology
+PANW	2.57965E+11	102.10909	1.118	3.85	Software - Infrastructure	Technology
+PARA	7962935296		1.767	-9.06	Entertainment	Communication Services
+PH	86476668928	30.303112	1.432	22.17	Specialty Industrial Machinery	Industrials
+PAYX	50738417664	30.0597	0.987	4.69	Software - Application	Technology
+PAYC	13521738752	28.253012	1.139	8.3	Software - Application	Technology
+PYPL	91251187712	21.77512	1.436	4.18	Credit Services	Financial Services
+PNR	17706156032	26.79	1.189	4	Specialty Industrial Machinery	Industrials
+PEP	2.16733E+11	23.29941	0.542	6.78	Beverages - Non-Alcoholic	Consumer Defensive
+PFE	1.44962E+11	34.106667	0.615	0.75	Drug Manufacturers - General	Healthcare
+PCG	43321819136	15.4296875	1.035	1.28	Utilities - Regulated Electric	Utilities
+PM	1.96873E+11	20.06656	0.56	6.31	Tobacco	Consumer Defensive
+PSX	50682011648	15.673053	1.319	7.83	Oil & Gas Refining & Marketing	Energy
+PNW	9954435072	16.456766	0.518	5.32	Utilities - Regulated Electric	Utilities
+PNC	79951773696	17.032967	1.121	11.83	Banks - Regional	Financial Services
+POOL	13812244480	31.154509	1.008	11.65	Industrial Distribution	Industrials
+PPG	28807440384	19.678288	1.254	6.31	Specialty Chemicals	Basic Materials
+PPL	23829051392	29.09009	0.834	1.11	Utilities - Regulated Electric	Utilities
+PFG	18048770048		1.203	-0.74	Asset Management	Financial Services
+PG	4.02853E+11	29.493101	0.414	5.8	Household & Personal Products	Consumer Defensive
+PGR	1.47507E+11	18.312727	0.366	13.75	Insurance - Property & Casualty	Financial Services
+PLD	1.02926E+11	33.574017	1.094	3.31	REIT - Industrial	Real Estate
+PRU	42882568192	10.728407	1.282	11.23	Insurance - Life	Financial Services
+PEG	43250909184	21.329237	0.626	4.07	Utilities - Regulated Electric	Utilities
+PTC	23867228160	63.679485	1.174	3.12	Software - Application	Technology
+PSA	55641624576	32.879917	0.69	9.66	REIT - Industrial	Real Estate
+PHM	24285810688	8.739483	1.641	13.55	Residential Construction	Consumer Cyclical
+QRVO	6578113024		1.487	-1.45	Semiconductors	Technology
+PWR	49833811968	62.51852	1.009	5.4	Engineering & Construction	Industrials
+QCOM	1.76127E+11	17.732662	1.286	8.94	Semiconductors	Technology
+DGX	17300324352	20.833334	0.891	7.44	Diagnostics & Research	Healthcare
+RL	14124258304	21.682554	1.504	10.49	Apparel Manufacturing	Consumer Cyclical
+RJF	32747182080	16.562437	1.002	9.69	Asset Management	Financial Services
+RTX	1.56728E+11	33.933716	0.54	3.47	Aerospace & Defense	Industrials
+O	48434176000	52.704765	0.996	1.05	REIT - Retail	Real Estate
+REG	13762713600	35.55189	1.218	2.12	REIT - Retail	Real Estate
+REGN	80362553344	18.08358	0.142	40.44	Biotechnology	Healthcare
+RF	22821574656	14.186441	1.182	1.77	Banks - Regional	Financial Services
+RSG	65439375360	33.4352	0.707	6.25	Waste Management	Industrials
+RMD	35013783552	31.633953	0.687	7.54	Medical Instruments & Supplies	Healthcare
+RVTY	14110130176	55.473686	1.056	2.09	Diagnostics & Research	Healthcare
+ROK	33552990208	35.850426	1.359	8.29	Specialty Industrial Machinery	Industrials
+ROL	23619555328	50.27835	0.701	0.97	Personal Services	Consumer Cyclical
+ROP	58296115200	40.004414	1.029	13.59	Software - Application	Technology
+ROST	50653999104	24.139936	1.1	6.36	Apparel Retail	Consumer Cyclical
+RCL	65920086016	24.566133	2.6	9.98	Travel Services	Consumer Cyclical
+SPGI	1.56934E+11	44.63813	1.183	11.33	Financial Data & Stock Exchanges	Financial Services
+CRM	3.39075E+11	58.466995	1.288	6.06	Software - Application	Technology
+SBAC	23040028672	33.798107	0.672	6.34	REIT - Specialty	Real Estate
+SLB	56796676096	12.932477	1.532	3.11	Oil & Gas Equipment & Services	Energy
+STX	20253997056	24.741602	1.07	3.87	Computer Hardware	Technology
+SRE	56473853952	19.638767	0.759	4.54	Utilities - Diversified	Utilities
+NOW	2.31302E+11	175.44601	0.986	6.39	Software - Application	Technology
+SHW	91800412160	36.2326	1.175	10.06	Specialty Chemicals	Basic Materials
+SPG	67434950656	23.851261	1.768	7.53	REIT - Retail	Real Estate
+SWKS	14549612544	24.655827	1.205	3.69	Semiconductors	Technology
+SJM	12081408000	22.935354	0.246	4.95	Packaged Foods	Consumer Defensive
+SW	27947980800	74.625	1.034	0.72	Packaging & Containers	Consumer Cyclical
+SNA	18639652864	18.248201	0.954	19.46	Tools & Accessories	Industrials
+SOLV	12016975872	183.05263		0.38	Health Information Services	Healthcare
+SO	91160576000	19.393938	0.509	4.29	Utilities - Regulated Electric	Utilities
+LUV	19803316224		1.153	-0.08	Airlines	Industrials
+SWK	12764779520		1.255	-1.24	Tools & Accessories	Industrials
+SBUX	1.10455E+11	29.432024	0.962	3.31	Restaurants	Consumer Cyclical
+STT	29449949184	15.746081	1.48	6.38	Asset Management	Financial Services
+STLD	18630219776	11.004497	1.325	11.12	Steel	Basic Materials
+STE	21145077760	35.94295	0.851	5.96	Medical Devices	Healthcare
+SYK	1.42804E+11	40.150055	0.92	9.33	Medical Devices	Healthcare
+SMCI	21343844352	18.134329	1.279	2.01	Computer Hardware	Technology
+SYF	26498752512	8.838961	1.593	7.7	Credit Services	Financial Services
+SNPS	78332043264	54.94919	1.076	9.25	Software - Infrastructure	Technology
+SYY	39278428160	20.55527	1.2	3.89	Food Distribution	Consumer Defensive
+TMUS	2.69164E+11	26.446978	0.496	8.77	Telecom Services	Communication Services
+TROW	26556887040	13.0931	1.423	9.13	Asset Management	Financial Services
+TTWO	32575297536		0.85	-21.2	Electronic Gaming & Multimedia	Communication Services
+TPR	14727875584	18.31884	1.556	3.45	Luxury Goods	Consumer Cyclical
+TRGP	40258793472	33.32491	2.237	5.54	Oil & Gas Midstream	Energy
+TGT	61638680576	14.265111	1.242	9.43	Discount Stores	Consumer Defensive
+TEL	44901220352	14.515473	1.328	10.34	Electronic Components	Technology
+TDY	22138421248	24.04099	1.007	19.76	Scientific & Technical Instruments	Technology
+TFX	8366368256	35.742065	1.177	5.04	Medical Instruments & Supplies	Healthcare
+TER	20067731456	39.24204	1.515	3.14	Semiconductor Equipment & Materials	Technology
+TSLA	1.40032E+12	119.18852	2.295	3.66	Auto Manufacturers	Consumer Cyclical
+TXN	1.74772E+11	35.611523	0.98	5.38	Semiconductors	Technology
+TPL	27546214400	61.35977	1.589	19.54	Oil & Gas E&P	Energy
+TXT	15011631104	17.706781	1.244	4.57	Aerospace & Defense	Industrials
+TMO	2.01535E+11	33.013157	0.792	15.96	Diagnostics & Research	Healthcare
+TJX	1.40351E+11	29.445755	0.893	4.24	Apparel Retail	Consumer Cyclical
+TSCO	30497193984	27.767511	0.814	10.28	Specialty Retail	Consumer Cyclical
+TT	89865584640	36.63853	1.221	10.9	Building Products & Equipment	Industrials
+TDG	70800818176	49.261345	1.423	25.56	Aerospace & Defense	Industrials
+TRV	55914782720	12.656733	0.63	19.46	Insurance - Property & Casualty	Financial Services
+TRMB	17971265536	12.30602	1.489	5.98	Scientific & Technical Instruments	Technology
+TFC	60773863424		1.035	-4.86	Banks - Regional	Financial Services
+TYL	26177765376	112.43566	0.771	5.44	Software - Application	Technology
+TSN	21522655232	26.88	0.775	2.25	Farm Products	Consumer Defensive
+USB	79608324096	15.701538	1.04	3.25	Banks - Regional	Financial Services
+UBER	1.26195E+11	29.522167	1.337	2.03	Software - Application	Technology
+UDR	16705600512	117.02632	0.847	0.38	REIT - Residential	Real Estate
+ULTA	19667040256	16.977982	1.326	24.98	Specialty Retail	Consumer Cyclical
+UNP	1.42458E+11	21.597425	1.056	10.88	Railroads	Industrials
+UAL	31279396864	11.336114	1.393	8.39	Airlines	Industrials
+UPS	1.0988E+11	19.450151	0.982	6.62	Integrated Freight & Logistics	Industrials
+URI	51108036608	20.36663	1.682	38.24	Rental & Leasing Services	Industrials
+UNH	4.78989E+11	33.90749	0.591	15.35	Healthcare Plans	Healthcare
+UHS	12361953280	12.485009	1.297	15.01	Medical Care Facilities	Healthcare
+VLO	40883785728	11.367958	1.374	11.36	Oil & Gas Refining & Marketing	Energy
+VTR	25132904448		1.39	-0.14	REIT - Healthcare Facilities	Real Estate
+VLTO	25774440448	32.166668		3.24	Pollution & Treatment Controls	Industrials
+VRSN	18970138624	22.98021	0.911	8.59	Software - Infrastructure	Technology
+VRSK	40012140544	43.659477	0.862	6.49	Consulting Services	Industrials
+VZ	1.77983E+11	18.30303	0.418	2.31	Telecom Services	Communication Services
+VRTX	1.19424E+11		0.394	-1.9	Biotechnology	Healthcare
+VTRS	15075042304		0.929	-0.73	Drug Manufacturers - Specialty & Generic	Healthcare
+VICI	32816310272	11.529629	0.961	2.7	REIT - Diversified	Real Estate
+V	6.09485E+11	32.34738	0.952	9.73	Credit Services	Financial Services
+VST	49295343616	27.337734	1.111	5.3	Utilities - Independent Power Producers	Utilities
+VMC	36418461696	43.08906	0.805	6.4	Building Materials	Basic Materials
+WRB	23153752064	15.619536	0.621	3.89	Insurance - Property & Casualty	Financial Services
+GWW	55645822976	30.956923	1.151	36.91	Industrial Distribution	Industrials
+WAB	34322993152	33.33556	1.272	5.99	Railroads	Industrials
+WBA	8971640832		0.669	-10.01	Pharmaceutical Retailers	Healthcare
+WMT	7.57147E+11	38.94628	0.516	2.42	Discount Stores	Consumer Defensive
+DIS	2.05252E+11	41.669117	1.398	2.72	Entertainment	Communication Services
+WBD	29609760768		1.483	-4.58	Entertainment	Communication Services
+WM	85571231744	32.549618	0.747	6.55	Waste Management	Industrials
+WAT	22459641856	36.093513	0.973	10.48	Diagnostics & Research	Healthcare
+WEC	30287730688	23.408312	0.438	4.09	Utilities - Regulated Electric	Utilities
+WFC	2.34529E+11	14.644491	1.136	4.81	Banks - Diversified	Financial Services
+WELL	80401727488	81.72151	1.194	1.58	REIT - Healthcare Facilities	Real Estate
+WST	23903012864	49.041603	1.003	6.73	Medical Instruments & Supplies	Healthcare
+WDC	22512506880	71.56044	1.394	0.91	Computer Hardware	Technology
+WY	21841055744	41.17808	1.428	0.73	REIT - Specialty	Real Estate
+WMB	66350718976	23.06356	1.062	2.36	Oil & Gas Midstream	Energy
+WTW	31364759552		0.742	-7.22	Insurance Brokers	Financial Services
+WYNN	10380812288	11.348139	1.802	8.33	Resorts & Casinos	Consumer Cyclical
+XEL	39117365248	20.213652	0.398	3.37	Utilities - Regulated Electric	Utilities
+XYL	29299165184	34.555874	1.05	3.49	Specialty Industrial Machinery	Industrials
+YUM	38232862720	25.5597	1.095	5.36	Restaurants	Consumer Cyclical
+ZBRA	20817172480	54.910206	1.645	7.35	Communication Equipment	Technology
+ZBH	21249159168	20.37023	1.021	5.24	Medical Devices	Healthcare
+ZTS	80388571136	33.42964	0.896	5.33	Drug Manufacturers - Specialty & Generic	Healthcare
